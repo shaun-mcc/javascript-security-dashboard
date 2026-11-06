@@ -12,6 +12,25 @@
     <h1>Security Findings Dashboard</h1>
     <p>Educational dashboard using functional security findings</p>
 
+    <div>
+        <label for="severity-filter">Severity:</label>
+        <select id="severity-filter">
+            <option value="All">All severities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="status-filter">Status</label>
+        <select id="status-filter">
+            <option value="All">All statuses</option>
+            <option value="Open">Open</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+
+    <p id="results-count" aria-live="polite"></p>
+
     <table>
         <thead>
             <tr>
