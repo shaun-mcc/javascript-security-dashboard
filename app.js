@@ -101,4 +101,38 @@ for (const finding of openFindings) {
     console.log(`${finding.id}: ${finding.title} | ${finding.asset}`);
 }
 
-renderFindings(findings);
+const severityFilter = document.getElementById("severity-filter");
+const statusFilter = document.getElementById("status-filter");
+const resultsCount = document.getElementById("results-count");
+
+function applyFilters() {
+    let filteredFindings = findings;
+
+    if (severityFilter.value !== "All") {
+        filteredFindings = filterBySeverity(
+            filteredFindings,
+            severityFilter.value
+        );
+    }
+
+    if (statusFilter.value !== "All") {
+        filteredFindings = filterByStatus(
+            filteredFindings,
+            statusFilter.value
+        );
+    }
+
+    renderFindings(filteredFindings)
+
+    if (filteredFindings.length === 0) {
+        resultsCount.textContent = "No findings match the selected filters";
+    } else {
+        resultsCount.textContent =
+            `Showing ${filteredFindings.length} of ${findings.length} findings`;
+    }
+}
+
+severityFilter.addEventListener("change", applyFilters);
+statusFilter.addEventListener("change", applyFilters);
+
+applyFilters();
