@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 
     <title>Security Findings Dashboard</title>
 
@@ -12,7 +13,7 @@
     <h1>Security Findings Dashboard</h1>
     <p>Educational dashboard using functional security findings</p>
 
-    <div>
+    <div class="filter-controls">
         <label for="severity-filter">Severity:</label>
         <select id="severity-filter">
             <option value="All">All severities</option>
@@ -38,18 +39,20 @@
 
     <p id="results-count" aria-live="polite"></p>
 
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Finding</th>
-                <th scope="col">Asset</th>
-                <th scope="col">Severity</th>
-                <th scope="col">Status</th>
-            </tr>
-        </thead>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Finding</th>
+                    <th scope="col">Asset</th>
+                    <th scope="col">Severity</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
 
-        <tbody id="findings-body"></tbody>
-    </table>
+            <tbody id="findings-body"></tbody>
+        </table>
+    </div>
 </body>
 </html>
