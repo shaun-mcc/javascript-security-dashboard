@@ -31,13 +31,37 @@ Keep the terminal running while using the dashboard. Press `Ctrl+C` to stop the 
 
 The dashboard uses JavaScript modules, open it through the local server rather than double-clicking `index.html`.
 
-## Technologies
+## Testing
 
-HTML and JavaScript
+Requires a current Node.js LTS installation. No additional dependencies are needed.
+
+From the project folder run:
+
+```powershell
+npm.cmd test
+```
+
+Or run the test runner directly:
+
+```bash
+node --test
+```
+
+The automated tests cover:
+
+- Total finding counts and default results
+- Severity and status filtering
+- Case insensitive asset search and whitespace handling
+- Combined filters and no match results
+- Empty collections
+- Preserving full collection after filtering
+- Protecting stored findings from changes to input data or returned results
+
+Tests cover the `FindingsCollection` class. Browser rendering and interactions are currently checked manually.
 
 ## Current Status
 
-In progress. Tests are planned.
+In progress. Automated tests for filtering logic implemented, final browser checks and documentation updates to follow.
 
 ## Disclaimer
 
