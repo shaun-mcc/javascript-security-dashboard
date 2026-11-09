@@ -9,6 +9,7 @@ JavaScript dashboard that displays fictional security findings in a browser tabl
 - Includes severity and status filtering functions with console output
 - Renders finding values as plain text using `textContent`
 - Interactive severity, status, and asset search filters
+- Styled dashboard layout, controls, and findings table
 
 ## Run Locally
 
@@ -20,8 +21,8 @@ HTML and JavaScript
 
 ## Current Status
 
-In progress. Styling, and tests are planned.
+In progress. Tests are planned.
 
 ## Disclaimer
 
-Educational project using synthetic data. This dashboard displays supplied findings; it does not scan systems or detect vulnerabilities.
+Educational project using synthetic data. This dashboard displays supplied findings, it does not scan systems or detect vulnerabilities.
