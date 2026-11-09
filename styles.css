@@ -1,0 +1,90 @@
+/* Padding and borders in element widths */
+* {
+    box-sizing: border-box;
+}
+
+/* Page appearance */
+body {
+    font-family: Calibri, Arial, sans-serif;
+    background-color: #f3f5f7;
+    color: #1f2937;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    line-height: 1.5;
+}
+
+h1 {
+    margin-bottom: 8px;
+    color: #16324f;
+}
+
+/* Filter controls */
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+label {
+    font-weight: 600;
+}
+
+select,
+input {
+    font: inherit;
+    padding: 8px 12px;
+    border: 1px solid #64748b;
+    border-radius: 4px;
+    background-color: #ffffff;
+    max-width: 100%;
+}
+
+select:focus-visible,
+input:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Result count */
+#results-count {
+    font-weight: 600;
+}
+
+/* Findings table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+th {
+    background-color: #16324f;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eef2f6;
+}
+
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+/* Let table scroll horizontally on narrow screens */
+.table-container {
+    overflow-x: auto;
+}
