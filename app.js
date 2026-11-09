@@ -55,6 +55,14 @@ function filterByStatus(findingList, status) {
     });
 }
 
+function filterByAsset(findingList, searchText) {
+    const normalizedSearch = searchText.trim().toLowerCase();
+
+    return findingList.filter(function (finding) {
+        return finding.asset.toLowerCase().includes(normalizedSearch);
+    });
+}
+
 function renderFindings(findingList) {
     const tableBody = document.getElementById("findings-body");
 
@@ -104,6 +112,7 @@ for (const finding of openFindings) {
 const severityFilter = document.getElementById("severity-filter");
 const statusFilter = document.getElementById("status-filter");
 const resultsCount = document.getElementById("results-count");
+const assetSearch = document.getElementById("asset-search");
 
 function applyFilters() {
     let filteredFindings = findings;
@@ -122,6 +131,13 @@ function applyFilters() {
         );
     }
 
+    if (assetSearch.value.trim() !== "") {
+        filteredFindings = filterByAsset(
+            filteredFindings,
+            assetSearch.value
+        );
+    }
+
     renderFindings(filteredFindings)
 
     if (filteredFindings.length === 0) {
@@ -134,5 +150,6 @@ function applyFilters() {
 
 severityFilter.addEventListener("change", applyFilters);
 statusFilter.addEventListener("change", applyFilters);
+assetSearch.addEventListener("input", applyFilters);
 
 applyFilters();
