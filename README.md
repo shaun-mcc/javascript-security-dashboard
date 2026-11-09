@@ -13,7 +13,23 @@ JavaScript dashboard that displays fictional security findings in a browser tabl
 
 ## Run Locally
 
-Download or clone the repository, then open `index.html` in your browser. No dependencies or build step required.
+Requires Python 3 to serve the files locally.
+
+1. Download or clone the repository
+2. Open a terminal in the project folder
+3. Start a local server:
+
+   ```bash
+   python -m http.server 8000 --bind 127.0.0.1
+   ```
+
+   On Windows, use `py` instead of `python` if needed
+
+4. Open `http://127.0.0.1:8000/` in your browser.
+
+Keep the terminal running while using the dashboard. Press `Ctrl+C` to stop the server.
+
+The dashboard uses JavaScript modules, open it through the local server rather than double-clicking `index.html`.
 
 ## Technologies
 
